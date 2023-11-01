@@ -1,0 +1,44 @@
+
+###
+GET http://localhost:8080/users
+Accept: application/json
+
+###
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+"name": "Ion",
+  "username": "ion",
+  "password": "ion",
+  "email": "ion",
+  "phoneNumber": "01",
+  "picture": "uii",
+  "userRole": "OWNER"
+
+}
+
+###
+POST http://localhost:8080/apartments
+Content-Type: application/json
+
+{
+  "name": "Ion"
+
+
+}
+
+###
+GET http://localhost:8080/apartments
+Accept: application/json
+
+
+###
+POST http://localhost:8080/apartments/1/periods
+Content-Type: application/json
+
+{
+  "startDate": "2022-02-02"
+
+
+}
