@@ -64,6 +64,16 @@ class ApartmentService(
     }
 
 
+    fun searchApartments(criteria: SearchCriteria): List<Apartment> {
+
+        val allApartments = getApartments()
+        val filteredApartments = allApartments.filter { apartment ->
+            criteria.location?.let { it.equals(apartment.location, ignoreCase = true) } ?: true
+                    && criteria.pricePerNight?.let { it == apartment.pricePerNight } ?: true
+        }
+
+        return filteredApartments
+    }
 
 
 }

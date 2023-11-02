@@ -42,5 +42,9 @@ class ApartmentController(
 
 
 
+    @PostMapping("/search")
+    fun searchApartments(@RequestBody searchCriteria: SearchCriteria): List<Apartment> {
+        return apartmentService.searchApartments(searchCriteria)
+    }
 
 }
