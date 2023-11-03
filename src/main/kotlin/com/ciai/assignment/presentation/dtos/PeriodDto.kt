@@ -4,6 +4,7 @@ import java.util.Date
 
 data class PeriodDto(
     val startDate: Date,
-    val endDate: Date
+    val endDate: Date,
+    val userId: Long
 ) {
 }

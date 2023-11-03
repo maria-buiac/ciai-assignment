@@ -1,9 +1,8 @@
 package com.ciai.assignment.service
 
-import com.ciai.assignment.ApartmentStatus
+import com.ciai.assignment.data.enums.PeriodStatus
 import com.ciai.assignment.data.Apartment
 import com.ciai.assignment.data.Period
-import com.ciai.assignment.data.Review
 import com.ciai.assignment.presentation.dtos.PeriodDto
 import com.ciai.assignment.repository.ApartmentRepository
 import org.springframework.stereotype.Service
@@ -20,7 +19,7 @@ class ApartmentService(
     fun addPeriod(apartmentId: Long, periodDto: PeriodDto) {
         val apartment = apartmentRepository.findById(apartmentId)
         apartment.ifPresentOrElse( {
-            val period = Period(null,null, periodDto.startDate, periodDto.endDate, ApartmentStatus.AVAILABLE)
+            val period = Period(null,null, periodDto.startDate, periodDto.endDate, PeriodStatus.AVAILABLE)
             period.apartment = it
             it.periods.add(period)
             apartmentRepository.save(it)

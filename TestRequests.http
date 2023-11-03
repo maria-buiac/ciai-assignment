@@ -42,3 +42,18 @@ Content-Type: application/json
 
 
 }
+
+### Add reservation as client
+
+POST http://localhost:8080/apartments/1/reservations
+Content-Type: application/json
+
+{
+  "period": {
+    "startDate": "2022-02-02",
+    "endDate": "2022-02-04"
+  },
+  "client" : {
+    "userId": 3
+  }
+}

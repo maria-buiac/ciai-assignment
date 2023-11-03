@@ -1,6 +1,6 @@
 package com.ciai.assignment.data
 
-import com.ciai.assignment.ApartmentStatus
+import com.ciai.assignment.data.enums.PeriodStatus
 import jakarta.persistence.*
 import java.util.Date
 
@@ -12,10 +12,11 @@ data class Period(
 
     @ManyToOne
     var apartment: Apartment?,
-    val startDate: Date?,
-    val endDate: Date?,
+    var startDate: Date?,
+    var endDate: Date?,
 
     @Enumerated(EnumType.STRING)
-    val status: ApartmentStatus?
+    var status: PeriodStatus?
 ) {
+
 }

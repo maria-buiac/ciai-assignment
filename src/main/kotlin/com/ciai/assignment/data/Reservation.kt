@@ -11,13 +11,10 @@ data class Reservation (
     @Id
     @GeneratedValue
     val reservationId: Long,
-    val startDate: Date,
-    val endDate: Date,
 
     @ManyToOne
-    val apartment: Apartment,
+    val period: Period,
 
     @ManyToOne
-    val user: User
-
+    val client: User
 )
